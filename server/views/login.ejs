@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="fr-FR">
+<%- include('header') %>
+<body>
+<%- include('navbar') %>
+
+
+<div class="container app mt-5">
+    <h4>Espace de connexion</h4>
+
+    <hr class="my-4">
+    <div class="row">
+        <form action="/login" method="post" class="col-xs-12 col-sm-12 col-md-8 col-lg-6">
+            <div class="form-group">
+                <label>Adresse e-mail</label>
+                <input type="email" name="email" class="form-control" placeholder="Veuillez saisir votre adresse e-mail" required>
+                <% if (errors.email.length) { %>
+                    <small class="form-text text-danger"><%= errors.email %></small>
+                <% } %>
+            </div>
+            <div class="form-group">
+                <label>Mot de passe</label>
+                <input type="password" name="password" class="form-control" placeholder="Veuillez saisir votre mot de passe" required>
+                <% if (errors.password.length) { %>
+                    <small class="form-text text-danger"><%= errors.password %></small>
+                <% } %>
+            </div>
+            <div class="form-group">
+                <div class="leader">
+                    Vous n'avez pas de compte? Inscrivez-vous en cliquant <a href="/register">ici</a> !
+                </div>
+            </div>
+            <button type="submit" class="btn btn-dark btn-block">Se connecter</button>
+        </form>
+    </div>
+</div>
+
+<%- include('footer') %>
+</body>
+</html>

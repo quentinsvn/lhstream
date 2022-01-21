@@ -1,0 +1,1 @@
+web: npm install && node ./node_modules/.bin/supervisor -w server ./server/app.js

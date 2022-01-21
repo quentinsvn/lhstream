@@ -1,0 +1,35 @@
+<!-- 
+    AUTEUR : Quentin SAVEAN 
+    Vue de la barre de navigation hors connexion
+-->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+        <a class="navbar-brand" href="/">LHStream</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse"
+                data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"/>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item float-right">
+                    <a class="nav-link" target="_blank" href="https://github.com/quentinsvn/lhstream">GitHub</a>
+                </li>
+                <% if (!user) { %>
+                    <li class="nav-item float-right">
+                        <a class="nav-link" href="/login">Connexion</a>
+                    </li>
+
+                    <li class="nav-item float-right">
+                        <a class="nav-link" href="/register">Inscription</a>
+                    </li>
+                <% } else { %>
+                <li class="nav-item float-right">
+                    <a class="nav-link" href="/logout">Se déconnecter</a>
+                </li>
+                <% } %>
+            </ul>
+        </div>
+    </div>
+</nav>

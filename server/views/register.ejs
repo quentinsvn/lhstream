@@ -1,0 +1,57 @@
+<!-- 
+    AUTEUR : Quentin SAVEAN 
+    Vue de la page d'inscription
+-->
+<!doctype html>
+<html lang="fr-FR">
+<%- include('header') %>
+<body>
+<%- include('navbar') %>
+
+
+<div class="container app mt-5">
+    <h4>Créer un compte</h4>
+
+    <hr class="my-4">
+
+    <div class="row">
+        <form action="/register"
+              method="post"
+              class="col-xs-12 col-sm-12 col-md-8 col-lg-6">
+
+            <div class="form-group">
+                <label>Nom d'utilisateur</label>
+                <input type="text" name="username" class="form-control" placeholder="Veuillez saisir votre nom d'utilisateur" required>
+                <% if (errors.username.length) { %>
+                    <small class="form-text text-danger"><%= errors.username %></small>
+                <% } %>
+            </div>
+
+            <div class="form-group">
+                <label>Adresse e-mail</label>
+                <input type="email" name="email" class="form-control" placeholder="Veuillez saisir votre adresse e-mail" required>
+                <% if (errors.email.length) { %>
+                    <small class="form-text text-danger"><%= errors.email %></small>
+                <% } %>
+            </div>
+
+            <div class="form-group">
+                <label>Mot de passe</label>
+                <input type="password" name="password" class="form-control" placeholder="Veuillez saisir votre mot de passe" required>
+            </div>
+
+            <div class="form-group">
+                <div class="leader">
+                    Vous avez déjà un compte? Connectez-vous en cliquant <a href="/login">ici</a>.
+                </div>
+            </div>
+
+            <button type="submit" class="btn btn-dark btn-block">S'inscrire</button>
+        </form>
+    </div>
+</div>
+
+<%- include('footer') %>
+
+</body>
+</html>
